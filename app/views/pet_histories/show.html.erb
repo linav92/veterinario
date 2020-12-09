@@ -14,6 +14,14 @@
   <strong>Description:</strong>
   <%= @pet_history.description %>
 </p>
+<p>
+  <strong>Name:</strong>
+  <%= @pet_history.pet.name %>
+</p>
+<p>
+  <strong>Visit:</strong>
+  <%= @pet_history.visit %>
+</p>
 
 <%= link_to 'Edit', edit_pet_history_path(@pet_history) %> |
 <%= link_to 'Back', pet_histories_path %>

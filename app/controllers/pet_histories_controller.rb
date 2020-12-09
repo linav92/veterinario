@@ -14,18 +14,20 @@ class PetHistoriesController < ApplicationController
 
   # GET /pet_histories/new
   def new
+    @pets = Pet.pluck :name, :id
     @pet_history = PetHistory.new
   end
 
   # GET /pet_histories/1/edit
   def edit
+    @pets = Pet.pluck :name, :id
   end
 
   # POST /pet_histories
   # POST /pet_histories.json
   def create
     @pet_history = PetHistory.new(pet_history_params)
-
+    @pets = Pet.all
     respond_to do |format|
       if @pet_history.save
         format.html { redirect_to @pet_history, notice: 'Pet history was successfully created.' }
@@ -69,6 +71,6 @@ class PetHistoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_history_params
-      params.require(:pet_history).permit(:weight, :heigth, :description)
+      params.require(:pet_history).permit(:weight, :heigth, :description, :visit, :pet_id)
     end
 end

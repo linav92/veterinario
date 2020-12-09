@@ -8,6 +8,8 @@
       <th>Weight</th>
       <th>Heigth</th>
       <th>Description</th>
+      <th>Name</th>
+      <th>Visits</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +20,8 @@
         <td><%= pet_history.weight %></td>
         <td><%= pet_history.heigth %></td>
         <td><%= pet_history.description %></td>
+        <td><%= pet_history.pet.name %></td>
+        <td><%= pet_history.visit %></td>
         <td><%= link_to 'Show', pet_history %></td>
         <td><%= link_to 'Edit', edit_pet_history_path(pet_history) %></td>
         <td><%= link_to 'Destroy', pet_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,4 +32,5 @@
 
 <br>
 
-<%= link_to 'New Pet History', new_pet_history_path %>
+<%= link_to 'New Pet History', new_pet_history_path %> |
+<%= link_to 'Pets', root_path %>

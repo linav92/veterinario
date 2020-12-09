@@ -15,6 +15,19 @@
   <%= @pet.birthdate %>
 </p>
 
+<table>
+  <thead>
+    <strong>Historial:</strong>
+  </thead>
+
+  <tbody>
+    <% @pet.pet_histories.each_with_index do |h,index|%>
+    <tr>
+      <td><%= "Visita #{index+1}: " "peso: #{h.weight} gramos, ""altura: #{h.heigth} centimetros"%></td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
 
 <table>
   <thead>
@@ -28,7 +41,7 @@
 
   <tbody>
     <tr>
-      <td><%= @pet.avg_weight %></td>
+      <td><%= @pet.avg_weight%></td>
       <td><%= @pet.avg_height %></td>
       <td><%= @pet.max_weight %></td>
       <td><%= @pet.max_height%></td>
