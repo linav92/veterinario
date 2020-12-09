@@ -15,8 +15,8 @@
   <%= @client.email %>
 </p>
 
-<table>
-  <thead>
+<table class="table table-bordered">
+  <thead class="table thead-light text-center">
     <strong>Historial de Mascotas:</strong>
     <tr>
     <th>Name</th>
@@ -26,7 +26,7 @@
   </thead>
   <tbody>
     <% @client.pets.each do |p|%>
-    <tr>
+    <tr class="text-center">
       <td> <%=p.name%> </td>
       <td> <%= "#{p.max_weight} gramos"%> </td>
       <td> <%= "#{p.max_height} centimetros"%> </td>

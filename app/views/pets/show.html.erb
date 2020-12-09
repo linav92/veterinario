@@ -15,7 +15,7 @@
   <%= @pet.birthdate %>
 </p>
 
-<table>
+<table class = "table table-borderless">
   <thead>
     <strong>Historial:</strong>
   </thead>
@@ -29,8 +29,8 @@
   </tbody>
 </table>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class ="thead-dark text-center">
     <tr>
       <th>Peso promedio</th>
       <th>Altura promedio</th>
@@ -40,7 +40,7 @@
   </thead>
 
   <tbody>
-    <tr>
+    <tr class ="text-center">
       <td><%= @pet.avg_weight%></td>
       <td><%= @pet.avg_height %></td>
       <td><%= @pet.max_weight %></td>

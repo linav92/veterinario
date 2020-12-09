@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :race %>
-    <%= form.text_field :race %>
+    <%= form.text_field :race, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :birthdate %>
-    <%= form.date_select :birthdate %>
+    <%= form.date_field :birthdate, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :client_id %>
-    <%= form.select :client_id, options_for_select(@clients)%>
+    <%= form.select :client_id, options_for_select(@clients), {include_blank: true}, class: 'form-control'%>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Create Pet', class: 'btn btn-info'%>
   </div>
 <% end %>
