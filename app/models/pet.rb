@@ -9,12 +9,12 @@ class Pet < ApplicationRecord
   end
 
   def avg_weight
-    pet_histories.inject(0){ |sum, history | sum + history.weight}/pet_histories.length
+    pet_histories.length>0 ? pet_histories.inject(0){ |sum, history | sum + history.weight}/pet_histories.length : 0
     #TODO-implement
   end
 
   def avg_height
-    pet_histories.inject(0){ |sum, history | sum + history.heigth.to_i}/pet_histories.length
+    pet_histories.length>0 ?  pet_histories.inject(0){ |sum, history | sum + history.heigth.to_i}/pet_histories.length : 0
     #TODO-implement
   end
 
